@@ -2,7 +2,7 @@ type Post {
   id: ID!
   body: String
   createdDate: Date
-  Author: User
+  Author: String
 }
 
 type User {
@@ -10,7 +10,7 @@ type User {
   username: String
   name: String
   avatarImageUrl: Url
-  Posts(limit: Int, next: Int, sortType: String): [Post]
+  Posts(limit: Int, next: Int, sortType: String): Post
 }
 
 scalar Url
@@ -23,6 +23,6 @@ type Query {
 }
 
 type Mutation {
-  createPost(body: String): Post
+  createPost(body: String, imageUrl: Url!): Post
   deletePost(id: ID!): Post
 }
