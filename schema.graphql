@@ -17,7 +17,7 @@ scalar Url
 scalar Date
 
 type Query {
-  Post(id: ID!): Tweet
+  Post(id: ID!): Post
   User(id: ID!): User
   Posts(limit: Int, next: Int, sortType: String): [Post]
 }
